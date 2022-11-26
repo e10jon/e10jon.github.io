@@ -4,6 +4,11 @@ const posts = await Astro.glob("./posts/*.md");
 ---
 
 <Layout>
-  <p>My page content, wrapped in a layout!</p>
-  {posts.map((p) => <a href={p.url}>{p.frontmatter.title}</a>)}
+  {
+    posts.map((p) => (
+      <div>
+        <a href={p.url}>{p.frontmatter.title}</a>
+      </div>
+    ))
+  }
 </Layout>
